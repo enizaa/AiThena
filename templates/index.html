@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Car Price</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}"> 
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/">Car<span>Price</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/predictions" class="nav-link">Predictions</a></li>
+	          <li class="nav-item"><a href="/car" class="nav-link">Cars</a></li>
+            <li class="nav-item"><a href="/visualisasi" class="nav-link">Visualisasi</a></li>
+	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav --> 
+    
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('/static/images/img3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
+          <div class="col-lg-8 ftco-animate">
+          	<div class="text w-100 text-center mb-md-5 pb-md-5">
+              <h1 class="mb-4" style="font-size: 80px;">CarPrice</h1>
+	            <p style="font-size: 18px;">Kunjungi website kami untuk memperoleh ramalan harga mobil bekas terbaru dan terpercaya. Dapatkan informasi lengkap dan akurat tentang harga mobil bekas di pasar saat ini.</p>
+	            <a href="https://www.youtube.com/watch?v=SoGwTa0gYQk" class="icon-wrap popup-youtube d-flex align-items-center mt-4 justify-content-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="ion-ios-play"></span>
+                </div>
+                <div class="heading-title ml-5">
+                    <span>Happy watching</span>
+                </div>
+            </a>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section ftco-no-pt bg-light">
+    	<div class="container">
+    		<div class="row justify-content-center">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          	<span class="subheading">APA YANG KAMI TAWARKAN</span>
+            <h2 class="mb-2">Kendaraan</h2>
+          </div>
+        </div>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="carousel-car owl-carousel">
+    					<div class="item">
+    						<div class="car-wrap rounded ftco-animate"> 
+		    					<div class="img rounded d-flex align-items-end" style="background-image: url('{{ url_for('static', filename='images/bmw-series3.jpg') }}');">
+		    					</div>
+		    					<div class="text">
+		    						<h2 class="mb-0"><a href="#">BMW Serie 3</a></h2>
+		    						<div class="d-flex mb-3">
+			    						<span class="cat">BMW</span>
+		    						</div>
+		    				
+		    					</div>
+		    				</div>
+    					</div>
+    					<div class="item">
+    						<div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url('{{ url_for('static', filename='images/Hyundai-Santa-Fe-teaser.jpg') }}');">
+		    					</div>
+		    					<div class="text">
+		    						<h2 class="mb-0"><a href="car.html">Hyundai Santa Fe</a></h2>
+		    						<div class="d-flex mb-3">
+			    						<span class="cat">Hyundai</span>
+		    						</div>
+		    				
+		    					</div>
+		    				</div>
+    					</div>
+    					<div class="item">
+    						<div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url('{{ url_for('static', filename='images/Isuzu-Panther.jpg') }}');">
+		    					</div>
+		    					<div class="text">
+		    						<h2 class="mb-0"><a href="car.html">Panther</a></h2>
+		    						<div class="d-flex mb-3">
+			    						<span class="cat">Isuzu</span>
+		    						</div>
+		    				
+		    					</div>
+		    				</div>
+    					</div>
+    					<div class="item">
+    						<div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url('{{ url_for('static', filename='images/ertiga.jpg') }}');">
+		    					</div>
+		    					<div class="text">
+		    						<h2 class="mb-0"><a href="car.html">ERTIGA</a></h2>
+		    						<div class="d-flex mb-3">
+			    						<span class="cat">Suzuki</span>
+		    						</div>
+		    				
+		    					</div>
+		    				</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section ftco-about">
+			<div class="container">
+				<div class="row no-gutters"> 
+					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ url_for('static', filename='images/about.jpg') }}');">
+					</div>
+					<div class="col-md-6 wrap-about ftco-animate">
+	          <div class="heading-section heading-section-white pl-md-5">
+	          	<span class="subheading" style="font-size: 20px;">About us</span>
+              <p style="font-size: 24px;">
+                CarPrice adalah sebuah platform prediksi harga mobil bekas secara akurat dan terpercaya yang dapat membantu sebelum melakukan pembelian maupun penjualan. Terima kasih telah memilih CarPrice sebagai sumber informasi Anda tentang harga mobil bekas!
+              </p>              
+	            <p><a href="/car" class="btn btn-primary py-3 px-4">View Vehicle Brand</a></p>
+	          </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ftco-section ftco-intro" style="background-image: url('{{ url_for('static', filename='images/img1.jpg') }}');">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-md-6 heading-section heading-section-white ftco-animate">
+            <h2 class="mb-3">Ingin mendapatkan keuntungan dari mobil bekas Anda? Bergabunglah dengan kami sekarang dan jangan lewatkan kesempatan ini!</h2>
+            <a href="/predictions" class="btn btn-primary btn-lg">Car Predictions Here</a>
+          </div>
+				</div>
+			</div>
+		</section>
+
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Group members</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-3">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url('{{ url_for('static', filename='images/difani.jpg') }}');">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Siapapun yang tidak pernah melakukan kesalahan, tidak pernah mencoba sesuatu yang baru.</p>
+                <p class="name">Difani Nalendra Wijaya</p>
+                <span class="position">Ketua Kelompok</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url('{{ url_for('static', filename='images/eni.png') }}');">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Jangan menyerah pada mimpi. Mimpi memberikan kemungkinan dan harapan yang tak terbatas.</p>
+                <p class="name">Eni Khusnul Khotimah</p>
+                <span class="position">Anggota</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url('{{ url_for('static', filename='images/sabrina.jpg') }}');">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">"We do not remember days, we remember moments." -Cesare Pavese.</p>
+                <p class="name">Shabrina Alvie Aditya</p>
+                <span class="position">Anggota</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="testimony-wrap rounded text-center py-4 pb-5">
+              <div class="user-img mb-2" style="background-image: url('{{ url_for('static', filename='images/diah.jpg') }}');">
+              </div>
+              <div class="text pt-4">
+                <p class="mb-4">Kamu tidak akan bahagia setiap hari, tetapi aku pikir kamu akan bisa mengakhiri hari yang lebih baik jika kamu membuat sesuatu yang istimewa untuk diri sendiri, jadi selalu berpikir positif!</p>
+                <p class="name">Diah Ediati Ariefiani</p>
+                <span class="position">Anggota</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+    <section class="ftco-counter ftco-section img" id="section-counter">
+			<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row">
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="11">0</strong>
+                <span>Total <br>Merek</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="59">0</strong>
+                <span>Jenis <br>Model</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="56">0</strong>
+                <span>Tipe <br>Varian</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text d-flex align-items-center">
+                <strong class="number" data-number="35">0</strong>
+                <span>Pilihan <br>Tahun</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    	</div>
+    </section>	
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>Price</span></a></h2>
+              <p>Selamat datang di website kami, di mana kesederhanaan bertemu dengan kemewahan dalam dunia mobil.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Services</a></li>
+                <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
+                <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
+                <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Customer Support</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">FAQ</a></li>
+                <li><a href="#" class="py-2 d-block">Payment Option</a></li>
+                <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
+                <li><a href="#" class="py-2 d-block">How it works</a></li>
+                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Banyuwangi, Jawa Timur, Indonesia</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+6285733797523</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">enizaa18@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="icon-heart color-danger" aria-hidden="true"></i> by <a target="_blank">AiThena</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/aos.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.animateNumber.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/jquery.timepicker.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/scrollax.min.js') }}"></script> 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5V7nTeUlxxFb6H_INuuSn2ECoMzKtXVg&callback=initMap&region=id"></script>
+  <script src="{{ url_for('static', filename='js/google-map.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script> 
+    
+  </body>
+</html> 

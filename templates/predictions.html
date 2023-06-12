@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Car Price</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}"> 
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Car<span>Price</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="/predictions" class="nav-link">Predictions</a></li>
+	          <li class="nav-item"><a href="/car" class="nav-link">Cars</a></li>
+            <li class="nav-item"><a href="/visualisasi" class="nav-link">Visualisasi</a></li>
+	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/img3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Prediction <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Car Price Prediction</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mt-5">
+      <div class="parent mb-5">
+        <div class="row gx-5">
+          <div class="p-5 col-6 card" style="background-color: #FFFFFF; border-radius: 40px; box-shadow: 0px 0px 10px 5px #51D593;">
+            <form action="/predict" method="post">
+
+              <!-- Input Merek -->
+              <div class="mb-3">
+                <label for="Merk">Merek</label>
+                <select class="form-select" name="Merk" id="Merk" required style="border-radius: 20px; box-shadow: 0px 0px 10px 5px #51D593;">
+                  <option value="" selected disabled>Pilih salah satu</option>
+                  <option value="0">Audi</option>
+                  <option value="1">BMW</option>
+                  <option value="3">Daihatsu</option>
+                  <option value="5">Ford</option>
+                  <option value="7">Honda</option>
+                  <option value="8">Hyundai</option>
+                  <option value="9">Isuzu</option>
+                  <option value="15">Mercedes-Benz</option>
+                  <option value="17">Mitsubishi</option>
+                  <option value="22">Suzuki</option>
+                  <option value="24">Toyota</option>
+                </select>
+              </div>
+              <!-- End of Input Merek -->
+
+              <!-- Input Model -->
+              <div class="mb-3">
+                <label for="MDl">Model</label>
+                <select class="form-select" name="MDl" id="MDL" required style="border-radius: 20px; box-shadow: 0px 0px 10px 5px #51D593;">
+                  <option value="" selected disabled>Pilih salah satu</option>
+                  <option value="37">Audi A3</option>
+                  <option value="38">Audi A4</option>
+                  <option value="39">Audi A5</option>
+                  <option value="40">Audi A6</option>
+                  <option value="41">Audi A8</option>
+                  <option value="42">Audi Q3</option>
+                  <option value="43">Audi Q7</option>
+                  <option value="44">Audi S5</option>
+                  <option value="45">Audi TT</option>
+
+                  <option value="212">M Serie</option>
+                  <option value="283">Serie 1</option>
+                  <option value="284">Serie 2</option>
+                  <option value="285">Serie 3</option>
+                  <option value="286">Serie 4</option>
+                  <option value="287">Serie 5</option>
+                  <option value="288">Serie 6</option>
+                  <option value="289">Serie 7</option>
+                  <option value="356">i8</option>
+                  <option value="346">X5</option>
+
+                  <option value="49">Ayla</option>
+                  <option value="94">Ceria</option>
+                  <option value="126">Espass</option>
+                  <option value="141">Feroza</option>
+                  <option value="315">Terios</option>
+                  <option value="348">Xenia</option>
+
+                  <option value="123">Escape</option>
+                  <option value="124">Escort</option>
+                  <option value="142">Fiesta</option>
+
+                  <option value="51">BR-V</option>
+                  <option value="61">Brio</option>
+                  <option value="93">Civic</option>
+                  <option value="178">HR-V</option>
+                  <option value="184">Jazz</option>
+                  <option value="226">Mobilio</option>
+
+                  <option value="27">Accent</option>
+                  <option value="36">Atoz</option>
+                  <option value="47">Avega</option>
+                  <option value="166">Grand Avega</option>
+                  <option value="276">Santa Fe</option>
+
+                  <option value="218">Mu-X</option>
+                  <option value="243">Panther</option>
+
+                  <option value="25">A-Class</option>
+                  <option value="50">B-Class</option>
+                  <option value="62">C-Class</option>
+                  <option value="64">CLA-Class</option>
+                  <option value="114">E-Class</option>
+                  <option value="149">G-Class</option>
+
+                  <option value="110">Delica</option>
+                  <option value="241">Pajero</option>
+                  <option value="242">Pajero Sport</option>
+                  <option value="305">Strada Triton</option>
+                  <option value="349">XPander</option>
+
+                  <option value="26">APV</option>
+                  <option value="122">Ertiga</option>
+                  <option value="190">Karimun</option>
+
+                  <option value="30">Agya</option>
+                  <option value="46">Avanza</option>
+                  <option value="145">Fortuner</option>
+                  <option value="193">Kijang</option>
+                  <option value="350">Yaris</option>
+                </select>
+              </div>
+              <!-- End of Input Model -->
+
+              <!-- Input Varian -->
+              <div class="mb-3">
+                <label for="VAR">Varian</label>
+                <select class="form-select" name="VAR" id="VAR" required style="border-radius: 20px; box-shadow: 0px 0px 10px 5px #51D593;">
+                  <option value="" selected disabled>Pilih salah satu</option>
+                  <option value="336">FSI</option>
+                  <option value="49">2.0 Sedan</option>
+                  <option value="267">Coupe</option>
+                  <option value="50">2.0 TFSI</option>
+                  <option value="618">V6 3.0</option>
+                  <option value="14">1.4 TFSI</option>
+                  <option value="96">3.0 TFSI Quatro</option>
+                  
+                  <option value="449">M1 Coupe</option>
+                  <option value="38">120i Steptronic</option>
+                  <option value="89">218i</option>
+                  <option value="110">318i E36 1.8</option>
+                  <option value="155">428I Convertible Sport</option>
+                  <option value="174">520i E28</option>
+                  <option value="200">630I 3.0</option>
+                  <option value="206">730Li E65</option>
+                  <option value="563">Sport</option>
+                  <option value="308">E53</option>
+    
+                  <option value="447">M Sporty</option>
+                  <option value="405">KL</option>
+                  <option value="477">Pick Up Jumbo 1.3</option>
+                  <option value="24">1.6</option>
+                  <option value="595">Ts Extra</option>
+                  <option value="434">Li Family</option>
+                  
+                  <option value="648">XLT</option>
+                  <option value="602">Titanium</option>
+    
+                  <option value="249">E Prestige</option>
+                  <option value="496">RS 1.2</option>
+                  <option value="608">Turbo 1.5</option>
+                  <option value="293">E Mugen</option>
+                  <option value="663">i-DSI</option>
+                  <option value="498">RS Limited Edition</option>
+    
+                  <option value="364">GLS</option>
+                  <option value="368">GLX</option>
+                  <option value="536">SG</option>
+                  <option value="338">Facelift</option>
+    
+                  <option value="72">2.5 L AT</option>
+                  <option value="385">Grand Touring</option>
+    
+                  <option value="217">A140</option>
+                  <option value="229">B200</option>
+                  <option value="240">C200</option>
+                  <option value="251">CLA200</option>
+                  <option value="310">E63 AMG</option>
+                  <option value="346">G300</option>
+    
+                  <option value="459">Standart</option>
+                  <option value="618">V6 3.0</option>
+                  <option value="80">2.5L Diesel NA</option>
+                  <option value="74">2.5 Manual</option>
+                  <option value="546">SPORT A/T</option>
+    
+                  <option value="539">SGX Luxury</option>
+                  <option value="353">GL Sporty</option>
+                  <option value="325">Estilo</option>
+    
+                  <option value="590">TRD Sportivo</option>
+                  <option value="341">G Basic</option>
+                  <option value="589">TRD G Luxury</option>
+                  <option value="408">Krista</option>
+                  <option value="395">Heykers</option> 
+                </select>
+              </div>
+              <!-- End of Input Varian -->
+
+              <!-- Input Tahun -->
+              <div class="mb-3">
+                <label for="THN">Tahun</label>
+                <select class="form-select" name="THN" id="THN" required style="border-radius: 20px; box-shadow: 0px 0px 10px 5px #51D593;">
+                  <option value="" selected disabled>Pilih salah satu</option>
+                  <option value="0">1986</option>
+                  <option value="1">1987</option>
+                  <option value="2">1988</option>
+                  <option value="3">1989</option>
+                  <option value="4">1990</option>
+                  <option value="5">1991</option>
+                  <option value="6">1992</option>
+                  <option value="7">1993</option>
+                  <option value="8">1994</option>
+                  <option value="9">1995</option>
+                  <option value="10">1996</option>
+                  <option value="11">1997</option>
+                  <option value="12">1998</option>
+                  <option value="13">1999</option>
+                  <option value="14">2000</option>
+                  <option value="15">2001</option>
+                  <option value="16">2002</option>
+                  <option value="17">2003</option>
+                  <option value="18">2004</option>
+                  <option value="19">2005</option>
+                  <option value="20">2006</option>
+                  <option value="21">2007</option>
+                  <option value="22">2008</option>
+                  <option value="23">2009</option>
+                  <option value="24">2010</option>
+                  <option value="25">2011</option>
+                  <option value="26">2012</option>
+                  <option value="27">2013</option>
+                  <option value="28">2014</option>
+                  <option value="29">2015</option>
+                  <option value="30">2016</option>
+                  <option value="31">2017</option>
+                  <option value="32">2018</option>
+                  <option value="33">2019</option>
+                  <option value="34"><1986</option>
+                </select>
+              </div>
+
+              <!-- Input Jarak_tempuh -->
+              <div class="mb-3">
+                <label for="JT">Jarak_tempuh</label>
+                <select class="form-select" name="JT" id="JT" required style="border-radius: 20px; box-shadow: 0px 0px 10px 5px #51D593;">
+                  <option value="" selected disabled>Pilih salah satu</option>
+                  <option value="0">10.000</option>
+                  <option value="1">100.000</option>
+                  <option value="2">105.000</option>
+                  <option value="3">110.000</option>
+                  <option value="4">115.000</option>
+                  <option value="5">120.000</option>
+                  <option value="6">125.000</option>
+                  <option value="7">130.000</option>
+                  <option value="8">135.000</option>
+                  <option value="9">140.000</option>
+                  <option value="10">145.000</option>
+                  <option value="11">15.000</option>
+                  <option value="12">150.000</option>
+                  <option value="13">155.000</option>
+                  <option value="14">160.000</option>
+                  <option value="15">165.000</option>
+                  <option value="16">170.000</option>
+                  <option value="17">175.000</option>
+                  <option value="18">180.000</option>
+                  <option value="19">185.000</option>
+                  <option value="20">190.000</option>
+                  <option value="21">195.000</option>
+                  <option value="22">20.000</option>
+                  <option value="23">200.000</option>
+                  <option value="24">205.000</option>
+                  <option value="25">210.000</option>
+                  <option value="26">215.000</option>
+                  <option value="27">220.000</option>
+                  <option value="28">225.000</option>
+                  <option value="29">230.000</option>
+                  <option value="30">235.000</option>
+                  <option value="31">240.000</option>
+                  <option value="32">245.000</option>
+                  <option value="33">25.000</option>
+                  <option value="34">250.000</option>
+                  <option value="35">255.000</option>
+                  <option value="36">260.000</option>
+                  <option value="37">265.000</option>
+                  <option value="38">270.000</option>
+                  <option value="39">275.000</option>
+                  <option value="40">280.000</option>
+                  <option value="41">285.000</option>
+                  <option value="42">290.000</option>
+                  <option value="43">295.000</option>
+                  <option value="44">30.000</option>
+                  <option value="45">300.000</option>
+                  <option value="46">35.000</option>
+                  <option value="47">40.000</option>
+                  <option value="48">45.000</option>
+                  <option value="49">5.000</option>
+                  <option value="50">50.000</option>
+                  <option value="51">55.000</option>
+                  <option value="52">60.000</option>
+                  <option value="53">65.000</option>
+                  <option value="54">70.000</option>
+                  <option value="55">75.000</option>
+                  <option value="56">80.000</option>
+                  <option value="57">85.000</option>
+                  <option value="58">90.000</option>
+                  <option value="59">95.000</option>
+                </select>
+              </div>
+              <!-- End of Input Jarak_tempuh -->
+
+              <!-- Button Submit -->
+              <div class="d-flex justify-content-end mt-5">
+                <button type="submit" class="btn btn-success" style="border-radius: 20px; background-color: #51D593;">Prediction</button>
+              </div>
+              <!-- End of Button Submit -->
+            </form>
+          </div>
+          <div class="col-4 pt-5 px-2 card gx-3" style="background: #51D593; border-radius: 40px; box-shadow: 0px 0px 10px 5px #51D593;">
+            <h4 class="text-center">Hasil Prediksi</h4>
+            <h4 class="text-center mb-5">Harga Mobil Bekas</h4>
+              {% if prediction %}
+                
+                  <h5 class="text-center" style="color: white;">
+                    Harga mobil bekas Merek
+                    <span style="font-weight: bold; font-size: 1.2em; color: black;">
+                      {% if (request.form['Merk']) == "0" %}
+                        Audi
+                      {% elif (request.form['Merk']) == "1" %}
+                         BWM
+                      {% elif (request.form['Merk']) == "3" %}
+                        Daihatsu
+                      {% elif (request.form['Merk']) == "5" %}
+                        Ford
+                      {% elif (request.form['Merk']) == "7" %}
+                         Honda
+                      {% elif (request.form['Merk']) == "8" %}
+                        Hyundai
+                      {% elif (request.form['Merk']) == "9" %}
+                        Isuzu
+                      {% elif (request.form['Merk']) == "15" %}
+                        Mercedes-Benz
+                      {% elif (request.form['Merk']) == "17" %}
+                        Mitsubishi
+                      {% elif (request.form['Merk']) == "22" %}
+                        Suzuki
+                      {% elif (request.form['Merk']) == "22" %}
+                        Toyota
+                      {% endif %}
+                    </span>
+                  </h5>
+                  <h5 class="text-center" style="color: white;">
+                    Model
+                    <span style="font-weight: bold; font-size: 1.2em; color: black;">
+                      {% if (request.form['MDl']) == "37" %}
+                        Audi A3
+                      {% elif (request.form['MDl']) == "38" %}
+                        Audi A4
+                      {% elif (request.form['MDl']) == "39" %}
+                        Audi A5
+                      {% elif (request.form['MDl']) == "40" %}
+                        Audi A6
+                      {% elif (request.form['MDl']) == "41" %}
+                        Audi A8
+                      {% elif (request.form['MDl']) == "42" %}
+                        Audi Q3
+                      {% elif (request.form['MDl']) == "43" %}
+                        Audi Q7
+                      {% elif (request.form['MDl']) == "44" %}
+                        Audi S5
+                      {% elif (request.form['MDl']) == "45" %}
+                        Audi TT
+                      {% elif (request.form['MDl']) == "212" %}
+                        M Serie
+                      {% elif (request.form['MDl']) == "283" %}
+                        Serie 1
+                      {% elif (request.form['MDl']) == "284" %}
+                        Serie 2
+                      {% elif (request.form['MDl']) == "285" %}
+                        Serie 3
+                      {% elif (request.form['MDl']) == "286" %}
+                        Serie 4
+                      {% elif (request.form['MDl']) == "287" %}
+                        Serie 5
+                      {% elif (request.form['MDl']) == "288" %}
+                        Serie 6
+                      {% elif (request.form['MDl']) == "289" %}
+                        Serie 7
+                      {% elif (request.form['MDl']) == "356" %}
+                        i8
+                      {% elif (request.form['MDl']) == "346" %}
+                        X5
+                      {% elif (request.form['MDl']) == "49" %}
+                        Ayla
+                      {% elif (request.form['MDl']) == "94" %}
+                        Ceria
+                      {% elif (request.form['MDl']) == "126" %}
+                        Espass
+                      {% elif (request.form['MDl']) == "141" %}
+                        Feroza
+                      {% elif (request.form['MDl']) == "315" %}
+                        Terios
+                      {% elif (request.form['MDl']) == "348" %}
+                        Xenia
+                      {% elif (request.form['MDl']) == "123" %}
+                        Escape
+                      {% elif (request.form['MDl']) == "124" %}
+                        Escort
+                      {% elif (request.form['MDl']) == "142" %}
+                        Fiesta
+                      {% elif (request.form['MDl']) == "51" %}
+                        BR-V
+                      {% elif (request.form['MDl']) == "61" %}
+                        Brio
+                      {% elif (request.form['MDl']) == "93" %}
+                        Civic
+                      {% elif (request.form['MDl']) == "178" %}
+                        HR-V
+                      {% elif (request.form['MDl']) == "184" %}
+                        Jazz
+                      {% elif (request.form['MDl']) == "226" %}
+                        Mobilio
+                      {% elif (request.form['MDl']) == "27" %}
+                        Accent
+                      {% elif (request.form['MDl']) == "36" %}
+                        Atoz
+                      {% elif (request.form['MDl']) == "47" %}
+                        Avega
+                      {% elif (request.form['MDl']) == "166" %}
+                        Grand Avega
+                      {% elif (request.form['MDl']) == "276" %}
+                        Santa Fe
+                      {% elif (request.form['MDl']) == "218" %}
+                        Mu-X
+                      {% elif (request.form['MDl']) == "243" %}
+                        Panther
+                      {% elif (request.form['MDl']) == "25" %}
+                        A-Class
+                      {% elif (request.form['MDl']) == "50" %}
+                        B-Class
+                      {% elif (request.form['MDl']) == "62" %}
+                        C-Class
+                      {% elif (request.form['MDl']) == "64" %}
+                        CLA-Class
+                      {% elif (request.form['MDl']) == "114" %}
+                        E-Class
+                      {% elif (request.form['MDl']) == "149" %}
+                        G-Class
+                      {% elif (request.form['MDl']) == "110" %}
+                        Delica
+                      {% elif (request.form['MDl']) == "241" %}
+                        Pajero
+                      {% elif (request.form['MDl']) == "242" %}
+                        Pajero Sport
+                      {% elif (request.form['MDl']) == "305" %}
+                        Strada Triton
+                      {% elif (request.form['MDl']) == "349" %}
+                        XPander
+                      {% elif (request.form['MDl']) == "26" %}
+                        APV
+                      {% elif (request.form['MDl']) == "122" %}
+                        Ertiga
+                      {% elif (request.form['MDl']) == "190" %}
+                        Karimun
+                      {% elif (request.form['MDl']) == "30" %}
+                        Agya
+                      {% elif (request.form['MDl']) == "46" %}
+                        Avanza
+                      {% elif (request.form['MDl']) == "145" %}
+                        Fortuner
+                      {% elif (request.form['MDl']) == "193" %}
+                        Kijang
+                      {% elif (request.form['MDl']) == "350" %}
+                        Yaris
+                      {% endif %}
+                    </span>
+                  </h5>
+                  <h5 class="text-center" style="color: white;">
+                    Varian
+                    <span style="font-weight: bold; font-size: 1.2em; color: black;">
+                      {% if (request.form['VAR']) == "336" %}
+                        FSI
+                      {% elif (request.form['VAR']) == "49" %}
+                        2.0 Sedan
+                      {% elif (request.form['VAR']) == "267" %}
+                        Coupe
+                      {% elif (request.form['VAR']) == "50" %}
+                        2.0 TFSI
+                      {% elif (request.form['VAR']) == "618" %}
+                        V6 3.0
+                      {% elif (request.form['VAR']) == "14" %}
+                        1.4 TFSI
+                      {% elif (request.form['VAR']) == "96" %}
+                        3.0 TFSI Quatro
+            
+                      {% elif (request.form['VAR']) == "449" %}
+                        M1 Coupe
+                      {% elif (request.form['VAR']) == "38" %}
+                        120i Steptronic
+                      {% elif (request.form['VAR']) == "89" %}
+                        218i
+                      {% elif (request.form['VAR']) == "110" %}
+                        318i E36 1.8
+                      {% elif (request.form['VAR']) == "155" %}
+                        428I Convertible Sport
+                      {% elif (request.form['VAR']) == "174" %}
+                        520i E28
+                      {% elif (request.form['VAR']) == "200" %}
+                        630I 3.0
+                      {% elif (request.form['VAR']) == "206" %}
+                        730Li E65
+                      {% elif (request.form['VAR']) == "563" %}
+                        Sport
+                      {% elif (request.form['VAR']) == "308" %}
+                        E53
+            
+                      {% elif (request.form['VAR']) == "447" %}
+                        M Sporty
+                      {% elif (request.form['VAR']) == "405" %}
+                        KL
+                      {% elif (request.form['VAR']) == "477" %}
+                        Pick Up Jumbo 1.3
+                      {% elif (request.form['VAR']) == "24" %}
+                        1.6
+                      {% elif (request.form['VAR']) == "595" %}
+                        Ts Extra
+                      {% elif (request.form['VAR']) == "434" %}
+                        Li Family
+            
+                      {% elif (request.form['VAR']) == "648" %}
+                        XLT
+                      {% elif (request.form['VAR']) == "602" %}
+                        Titanium
+            
+                      {% elif (request.form['VAR']) == "249" %}
+                        E Prestige
+                      {% elif (request.form['VAR']) == "496" %}
+                        RS 1.2
+                      {% elif (request.form['VAR']) == "608" %}
+                        Turbo 1.5
+                      {% elif (request.form['VAR']) == "293" %}
+                        E Mugen
+                      {% elif (request.form['VAR']) == "663" %}
+                        i-DSI
+                      {% elif (request.form['VAR']) == "498" %}
+                        RS Limited Edition
+            
+                      {% elif (request.form['VAR']) == "364" %}
+                        GLS
+                      {% elif (request.form['VAR']) == "368" %}
+                        GLX
+                      {% elif (request.form['VAR']) == "536" %}
+                        SG
+                      {% elif (request.form['VAR']) == "338" %}
+                        Facelelift
+            
+                      {% elif (request.form['VAR']) == "72" %}
+                        2.5 L AT
+                      {% elif (request.form['VAR']) == "385" %}
+                        Grand Touring
+            
+                      {% elif (request.form['VAR']) == "217" %}
+                        A140
+                      {% elif (request.form['VAR']) == "229" %}
+                        B200
+                      {% elif (request.form['VAR']) == "240" %}
+                        C200
+                      {% elif (request.form['VAR']) == "251" %}
+                        CLA200
+                      {% elif (request.form['VAR']) == "310" %}
+                        E63 AMG
+                      {% elif (request.form['VAR']) == "346" %}
+                        G300
+            
+                      {% elif (request.form['VAR']) == "459" %}
+                        Standart
+                      {% elif (request.form['VAR']) == "618" %}
+                        V6 3.0
+                      {% elif (request.form['VAR']) == "80" %}
+                        2.5L Diesel NA
+                      {% elif (request.form['VAR']) == "74" %}
+                        2.5 Manual
+                      {% elif (request.form['VAR']) == "546" %}
+                        SPORT A/T
+            
+                      {% elif (request.form['VAR']) == "539" %}
+                        SGX Luxury
+                      {% elif (request.form['VAR']) == "353" %}
+                        GL Sporty
+                      {% elif (request.form['VAR']) == "325" %}
+                        Estilo
+            
+                      {% elif (request.form['VAR']) == "590" %}
+                        TRD Sportivo
+                      {% elif (request.form['VAR']) == "341" %}
+                        G Basic
+                      {% elif (request.form['VAR']) == "589" %}
+                        TRD G Luxury
+                      {% elif (request.form['VAR']) == "408" %}
+                        Krista
+                      {% elif (request.form['VAR']) == "395" %}
+                        Heykers
+                      {% endif %}
+                    </span>
+                  </h5>
+                  <h5 class="text-center" style="color: white;">
+                    Tahun
+                    <span style="font-weight: bold; font-size: 1.2em; color: black;">
+                      {% if (request.form['THN']) == "0" %}
+                        1986
+                      {% elif (request.form['THN']) == "1" %}
+                        1987
+                      {% elif (request.form['THN']) == "2" %}
+                        1988
+                      {% elif (request.form['THN']) == "3" %}
+                        1989
+                      {% elif (request.form['THN']) == "4" %}
+                        1990
+                      {% elif (request.form['THN']) == "5" %}
+                        1991
+                      {% elif (request.form['THN']) == "6" %}
+                        1992
+                      {% elif (request.form['THN']) == "7" %}
+                        1993
+                      {% elif (request.form['THN']) == "8" %}
+                        1994
+                      {% elif (request.form['THN']) == "9" %}
+                        1995
+                      {% elif (request.form['THN']) == "10" %}
+                        1996
+                      {% elif (request.form['THN']) == "11" %}
+                        1997
+                      {% elif (request.form['THN']) == "12" %}
+                        1998
+                      {% elif (request.form['THN']) == "13" %}
+                        1999
+                      {% elif (request.form['THN']) == "14" %}
+                        2000
+                      {% elif (request.form['THN']) == "15" %}
+                        2001
+                      {% elif (request.form['THN']) == "16" %}
+                        2002
+                      {% elif (request.form['THN']) == "17" %}
+                        2003
+                      {% elif (request.form['THN']) == "18" %}
+                        2004
+                      {% elif (request.form['THN']) == "19" %}
+                        2005
+                      {% elif (request.form['THN']) == "20" %}
+                        2006
+                      {% elif (request.form['THN']) == "21" %}
+                        2007
+                      {% elif (request.form['THN']) == "22" %}
+                        2008
+                      {% elif (request.form['THN']) == "23" %}
+                        2009
+                      {% elif (request.form['THN']) == "24" %}
+                        2010
+                      {% elif (request.form['THN']) == "25" %}
+                        2011
+                      {% elif (request.form['THN']) == "26" %}
+                        2012
+                      {% elif (request.form['THN']) == "27" %}
+                        2013
+                      {% elif (request.form['THN']) == "28" %}
+                        2014
+                      {% elif (request.form['THN']) == "29" %}
+                        2015
+                      {% elif (request.form['THN']) == "30" %}
+                        2016
+                      {% elif (request.form['THN']) == "31" %}
+                        2017
+                      {% elif (request.form['THN']) == "32" %}
+                        2018
+                      {% elif (request.form['THN']) == "33" %}
+                        2019
+                      {% elif (request.form['THN']) == "34" %}
+                        1986
+                      {% endif %}
+                    </span>
+                  </h5>
+                  <h5 class="text-center" style="color: white;">
+                    Jarak tempuh
+                    <span style="font-weight: bold; font-size: 1.2em; color: black;">
+                      {% if (request.form['JT']) == "0" %}
+                        10.000
+                      {% elif (request.form['JT']) == "1" %}
+                        100.000
+                      {% elif (request.form['JT']) == "2" %}
+                        105.000
+                      {% elif (request.form['JT']) == "3" %}
+                        110.000
+                      {% elif (request.form['JT']) == "4" %}
+                        115.000
+                      {% elif (request.form['JT']) == "5" %}
+                        120.000
+                      {% elif (request.form['JT']) == "6" %}
+                        125.000
+                      {% elif (request.form['JT']) == "7" %}
+                        130.000
+                      {% elif (request.form['JT']) == "8" %}
+                        135.000
+                      {% elif (request.form['JT']) == "9" %}
+                        140.000
+                      {% elif (request.form['JT']) == "10" %}
+                        145.000
+                      {% elif (request.form['JT']) == "11" %}
+                        15.000
+                      {% elif (request.form['JT']) == "12" %}
+                        150.000
+                      {% elif (request.form['JT']) == "13" %}
+                        155.000
+                      {% elif (request.form['JT']) == "14" %}
+                        160.000
+                      {% elif (request.form['JT']) == "15" %}
+                        165.000
+                      {% elif (request.form['JT']) == "16" %}
+                        170.000
+                      {% elif (request.form['JT']) == "17" %}
+                        175.000
+                      {% elif (request.form['JT']) == "18" %}
+                        180.000
+                      {% elif (request.form['JT']) == "19" %}
+                        185.000
+                      {% elif (request.form['JT']) == "20" %}
+                        190.000
+                      {% elif (request.form['JT']) == "21" %}
+                        195.000
+                      {% elif (request.form['JT']) == "22" %}
+                        20.000
+                      {% elif (request.form['JT']) == "23" %}
+                        200.000
+                      {% elif (request.form['JT']) == "24" %}
+                        205.000
+                      {% elif (request.form['JT']) == "25" %}
+                        210.000
+                      {% elif (request.form['JT']) == "26" %}
+                        215.000
+                      {% elif (request.form['JT']) == "27" %}
+                        220.000
+                      {% elif (request.form['JT']) == "28" %}
+                        225.000
+                      {% elif (request.form['JT']) == "29" %}
+                        230.000
+                      {% elif (request.form['JT']) == "30" %}
+                        235.000
+                      {% elif (request.form['JT']) == "31" %}
+                        240.000
+                      {% elif (request.form['JT']) == "32" %}
+                        245.000
+                      {% elif (request.form['JT']) == "33" %}
+                        25.000
+                      {% elif (request.form['JT']) == "34" %}
+                        250.000
+                      {% elif (request.form['JT']) == "35" %}
+                        255.000
+                      {% elif (request.form['JT']) == "36" %}
+                        260.000
+                      {% elif (request.form['JT']) == "37" %}
+                        265.000
+                      {% elif (request.form['JT']) == "38" %}
+                        270.000
+                      {% elif (request.form['JT']) == "39" %}
+                        275.000
+                      {% elif (request.form['JT']) == "40" %}
+                        280.000
+                      {% elif (request.form['JT']) == "41" %}
+                        285.000
+                      {% elif (request.form['JT']) == "42" %}
+                        290.000
+                      {% elif (request.form['JT']) == "43" %}
+                        295.000
+                      {% elif (request.form['JT']) == "44" %}
+                        30.000
+                      {% elif (request.form['JT']) == "45" %}
+                        300.000
+                      {% elif (request.form['JT']) == "46" %}
+                        35.000
+                      {% elif (request.form['JT']) == "47" %}
+                        40.000
+                      {% elif (request.form['JT']) == "48" %}
+                        45.000
+                      {% elif (request.form['JT']) == "49" %}
+                        5.000
+                      {% elif (request.form['JT']) == "50" %}
+                        50.000
+                      {% elif (request.form['JT']) == "51" %}
+                        55.000
+                      {% elif (request.form['JT']) == "52" %}
+                        60.000
+                      {% elif (request.form['JT']) == "53" %}
+                        65.000
+                      {% elif (request.form['JT']) == "54" %}
+                        70.000
+                      {% elif (request.form['JT']) == "55" %}
+                        75.000
+                      {% elif (request.form['JT']) == "56" %}
+                        80.000
+                      {% elif (request.form['JT']) == "57" %}
+                        85.000
+                      {% elif (request.form['JT']) == "58" %}
+                        90.000
+                      {% elif (request.form['JT']) == "59" %}
+                        95.000
+                      {% endif %}
+                    </span>
+                  </h5>
+                  <h5 class="text-center" style="color: white;">
+                    Diprediksi sebesar
+                    <span id="hasil-prediksi" style="font-weight: bold; font-size: 1.2em; color: black;">
+                      <span class="d-flex justify-content-center">Rp. {{ prediction }}</span>
+                    </span>
+                  </h5>
+                  {% endif %}
+                </div>
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>
+              
+          <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container">
+              <div class="row mb-5">
+                <div class="col-md">
+                  <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>Price</span></a></h2>
+                    <p>Selamat datang di website kami, di mana kesederhanaan bertemu dengan kemewahan dalam dunia mobil.</p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                      <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                      <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                      <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="ftco-footer-widget mb-4 ml-md-5">
+                    <h2 class="ftco-heading-2">Information</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="py-2 d-block">About</a></li>
+                      <li><a href="#" class="py-2 d-block">Services</a></li>
+                      <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
+                      <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
+                      <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md">
+                   <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Customer Support</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="py-2 d-block">FAQ</a></li>
+                      <li><a href="#" class="py-2 d-block">Payment Option</a></li>
+                      <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
+                      <li><a href="#" class="py-2 d-block">How it works</a></li>
+                      <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                      <ul>
+                        <li><span class="icon icon-map-marker"></span><span class="text">Banyuwangi, Jawa Timur, Indonesia</span></li>
+                        <li><a href="#"><span class="icon icon-phone"></span><span class="text">+6285733797523</span></a></li>
+                        <li><a href="#"><span class="icon icon-envelope"></span><span class="text">enizaa18@gmail.com</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 text-center">
+      
+                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="icon-heart color-danger" aria-hidden="true"></i> by <a target="_blank">AiThena</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          
+        
+      
+        <!-- loader -->
+        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/aos.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.animateNumber.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/jquery.timepicker.min.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/scrollax.min.js') }}"></script> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5V7nTeUlxxFb6H_INuuSn2ECoMzKtXVg&callback=initMap&region=id"></script>
+        <script src="{{ url_for('static', filename='js/google-map.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script> 
+          
+        </body>
+      </html> 
